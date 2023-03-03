@@ -5,14 +5,14 @@ namespace GantzOrders.Models
 {
   public class Order
   {
+    public int Id { get; }
     public string Title { get; set; }
     public string Details { get; set; }
-    public string Price { get; set; }
     public string Date { get; set; }
-    public int Id {get;}
+    public decimal Price { get; set; }
     private static List<Order> _instances = new List<Order>{};
 
-    public Order(string title, string details, string price, string date)
+    public Order(string title, string details, string date, decimal price)
     {
       Title = title;
       Details = details;
@@ -20,6 +20,10 @@ namespace GantzOrders.Models
       Date = date;
       Id = _instances.Count;
       _instances.Add(this);
+    }
+    public static List<Order> GetAll()
+    {
+      return _instances;
     }
     public static void ClearAll()
     {
