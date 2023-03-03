@@ -5,20 +5,30 @@ namespace GantzOrders.Models
 {
   public class Order
   {
-    public string Name { get; set; }
-    public static int Indexer { get; set; } =0;
+    public string Title { get; set; }
+    public string Details { get; set; }
+    public string Price { get; set; }
+    public string Date { get; set; }
     public int Id {get;}
     private static List<Order> _instances = new List<Order>{};
-    // public List<Songs> Songs {get;set;} 
 
-    public Order(string name, int vendorId)
+    public Order(string title, string details, string price, string date)
     {
-      Name = name;
-      Id = Indexer;
-      Order.Indexer ++;
+      Title = title;
+      Details = details;
+      Price = price;
+      Date = date;
+      Id = _instances.Count;
       _instances.Add(this);
-      Vendor targetVendor = Vendor.Find(vendorId);
-      targetVendor.Inventory.Add(this);
     }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+    
   }
 }

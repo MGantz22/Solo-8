@@ -6,20 +6,22 @@ namespace GantzOrders.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/vendor/{vendorId}/inventory/new")] 
+    [HttpGet("/vendor/{vendorId}/orders/new")] 
     public ActionResult New(int vendorId)
     {
-      Vendor targetVendor = Vendor.Find(vendorId);
-      return View (targetVendor);
-    }
+      Vendor vendor = Vendor.Find(vendorId);
+      return View (Vendor);
+      }
 
-    [HttpPost("/vendor/{pathwayVendorId}/order")]
-    public ActionResult Create(int pathwayVendorId, string inventoryName)
+    [HttpPost("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Vendor targetVendor = Vendor.Find(pathwayVendorId);
-      Order newOrder = new Order(inventoryName, pathwayVendorId);
-      return Redirect($"/vendors/{pathwayVendorId}");
-      
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(venforId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Model.Add("order", order);
+      Model.Add("vendor", vendor);
+      return View (model);
     }
     
   }
