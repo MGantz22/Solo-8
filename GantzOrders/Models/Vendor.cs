@@ -9,7 +9,7 @@ namespace GantzOrders.Models
     public static int Indexer {get;set;} =0;
     public int Id {get;}
     private static List<Vendor> _instances = new List<Vendor>{};
-    public List<Order> Oders {get;set;}
+    public List<Order> Inventory {get;set;}
 
     public Vendor (string name)
     {
@@ -17,7 +17,7 @@ namespace GantzOrders.Models
       Id = Indexer;
       Vendor.Indexer ++;
       _instances.Add(this);
-      Orders = new List<Order>{};
+      Inventory = new List<Order>{};
     }
 
     public static List<Vendor> GetAll()

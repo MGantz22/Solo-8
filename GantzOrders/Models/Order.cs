@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace MusicOrganizer.Models
+namespace GantzOrders.Models
 {
   public class Order
   {
@@ -11,14 +11,14 @@ namespace MusicOrganizer.Models
     private static List<Order> _instances = new List<Order>{};
     // public List<Songs> Songs {get;set;} 
 
-    public Order(string name, int orderId)
+    public Order(string name, int vendorId)
     {
       Name = name;
       Id = Indexer;
       Order.Indexer ++;
       _instances.Add(this);
       Vendor targetVendor = Vendor.Find(vendorId);
-      targetVendor.Vendors.Add(this);
+      targetVendor.Inventory.Add(this);
     }
   }
 }
