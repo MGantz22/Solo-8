@@ -5,17 +5,18 @@ using System.Collections.Generic;
 namespace GantzOrders.Controllers
 {
 
-public class VendorsController : Controller
-{
-  [HttpGet("/vendors/new")]
-  public ActionResult New()
+  public class VendorController : Controller
   {
-    return View();
-  }
-  [HttpPost("/vendors")]
-    public ActionResult Create(string name, string genre)
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
     {
-      Vendor newVendor = new Vendor(name);
+      return View();
+    }
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string name, string description)
+    {
+      Vendor newVendor = new Vendor(name, description);
       return RedirectToAction("Index");
     }
 
@@ -26,8 +27,16 @@ public class VendorsController : Controller
       return View(vendorList);
     }
 
-
-}
-
-
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
+    
+  }
 }

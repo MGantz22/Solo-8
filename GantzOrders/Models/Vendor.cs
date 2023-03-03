@@ -6,34 +6,38 @@ namespace GantzOrders.Models
   public class Vendor
   {
     public string Name {get; set;}
-    public static int Indexer {get;set;} =0;
+    public string Description {get;set;}
     public int Id {get;}
     private static List<Vendor> _instances = new List<Vendor>{};
-    public List<Order> Inventory {get;set;}
 
-    public Vendor (string name)
+    public List<Order> Orders {get;set;}
+
+    public Vendor (string name, string description)
     {
       Name = name;
-      Id = Indexer;
-      Vendor.Indexer ++;
+      Description = description;
+      Id = _instances.Count;
       _instances.Add(this);
-      Inventory = new List<Order>{};
+      Orders = new List<Order>{};
+    }
+    public static void clearAll()
+    {
+      _instances.Clear();
     }
 
     public static List<Vendor> GetAll()
     {
       return _instances;
     }
-    public static Vendor Find(int vendorId)
+
+    public static Vendor Find(int searchId)
     {
-      foreach(Vendor item in _instances)
-      {
-        if(vendorId == item.Id)
-        {
-          return item;
-        }
-      }
-      return new Vendor("artist not Found");
+      return _instances[searchId-1];
     }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    } 
   }
 }
