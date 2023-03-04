@@ -11,6 +11,11 @@ namespace GantzOrders.controller
     {
       return View();
     }
+  //   [Route("/gantz_photos")]
+  // public ActionResult GantzPhotos()
+  // {
+  //   return View();
+  // }
 
   }
 }

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProjectName
+namespace GantzOrders
 {
   class Program
   {
@@ -14,7 +14,7 @@ namespace ProjectName
       WebApplication app = builder.Build();
 
       app.UseHttpsRedirection();
-
+      app.UseStaticFiles();
       app.UseRouting();
 
       app.MapControllerRoute(
