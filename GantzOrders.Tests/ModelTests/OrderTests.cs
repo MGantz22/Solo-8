@@ -1,9 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BakeryOrders.Models;
+using GantzOrders.Models;
 using System.Collections.Generic;
 using System;
 
 namespace GantzOrders.Tests
 {
-  
+  [TestClass]
+  public class OrderTests : IDisposable
+  {
+    
+  }
 }

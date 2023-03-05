@@ -2,7 +2,47 @@ body {
   background-image: url("../img/gantz.png");
   background-position: center;
   background-size: 100%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:azure;
+  background-repeat:repeat-y;
+  margin: 2%;
 }
-h1{
-  color: black;
+h1 {
+  color:azure;
+  font-size:400%;
+}
+p {
+  font-size: 120%;
+}
+form {
+  font-size: 120%;
+}
+a {
+  color: rgb(55, 250, 130);
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #030303;
+  background-color:rgb(55, 250, 130);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color:rgb(7, 7, 7);
+  color:azure;
+} 
+
+.button:active {
+  background-color: rgb(55, 250, 130);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  border: none;
 }

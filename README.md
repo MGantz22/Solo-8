@@ -1,38 +1,39 @@
-# Gantz Bakery
+# Gantz Bakery Order tracking
 
 
 #### By: _Mitchell Gantz_
 
-#### _A code review project for C# and MSTesting (TDD)._
+#### _Tracking Vendors and Orders._
 
 ## Technologies Used
 
 - _C#_
 - _.NET 6_
-- _MSTesT_
+- _MSTest_
 
 ## Description/Objectives
 
-- _When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread, Pastry and the sale for today._
-- _A user should be able to specify how many loaves of Bread and how many Pastrys they'd like._
-- _The application will return the total cost of the order._
-- _Gantz offers the following deals:_
-  - _Bread: Buy 2, get 1 free (every 3rd loaf of bread is free.). A single loaf costs $5, two loaves costs $10, and three loaves cost $10._
-  - _Pastry: Buy 3, get 1 free (every 4th Pastry is free.). A single Pastry costs $2, two costs $4, and three cost $6, four costs $6._
+- _Use Razor to display information on each page._
+- _Create a Vendor class. This class should include properties for the vendor's name, a description of the vendor, a List of Orders belonging to the vendor._
+- _Create an Order class. This class should include properties for the title, the description, the price, the date._
+- _The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Gantz and providing him with a link to a Vendors page_
+- _The vendors page should contain a link to a page presenting Gantz with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Gantz should be routed back to the homepage_
+- _Gantz should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders_
+- _Gantz should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor. Hint: The route for this page might look something like: "/vendors/1/orders/new"._
 
 ## Setup/Installation Requirements 
 
-* clone this repo & navigate to the GantzBakery directory
-* open a command line prompt
+* clone this repo & navigate to the GantzOrders directory
+* open a command line interface within the GantzOrders directory and run the following commands:
 * build the project using $ `dotnet build`
 * execute code with $ `dotnet run`
 
-## To Execute Tests
+## Testing Instructions
 
-* clone the repo and/or navigate to the GantzBakery.Tests directory
-* open a command line prompt
-* enter $ `dotnet restore`
-* enter $ `dotnet test`
+* To run tests, first install/setup as detailed above
+* navigate to the GantzOrders.Tests directory and open a command line interface
+* run tests by executing $ `dotnet test`
+* if additional tests are required, first modify the existing test file within the correct folder before running `dotnet test` again
 
 ## Known Bugs
 
@@ -40,6 +41,11 @@
   - BUG: _A brief description of the bug_
   - FIX: _Suggestion for solution (if you have one!)_
 - _If you'd like to be credited, please also include your_ **_github user profile link_**
+
+## Furture Implementations
+- _Custom backgrounds for each vendor_
+- _Interavtive page_
+- _More styling_
 
 ## License
 
