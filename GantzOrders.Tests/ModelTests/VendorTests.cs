@@ -6,7 +6,7 @@ using System;
 namespace GantzOrders.Tests
 {
   [TestClass]
-  public class OrderTests : IDisposable
+  public class VendorTests : IDisposable
   {
     public void Dispose()
     {
@@ -75,7 +75,7 @@ namespace GantzOrders.Tests
       string name = "Gantz Cheese Market";
       string description = "Largest cheese selection in the Midwest";
       Vendor newVendor = new Vendor(name, description);
-      string details = "22 wheels of che2ddar";
+      string details = "22 wheels of cheddar";
       string title = "Gantz cheddar";
       string date = "October 1";
       decimal price = 422;
