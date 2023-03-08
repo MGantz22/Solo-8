@@ -23,17 +23,18 @@
 
 ## Setup/Installation Requirements 
 
-* clone this repo & navigate to the GantzOrders directory
-* open a command line interface within the GantzOrders directory and run the following commands:
-* build the project using $ `dotnet build`
-* execute code with $ `dotnet run`
+* Clone this repo & navigate to the GantzOrders directory
+* Open a command line interface within the GantzOrders directory and run the following commands:
+* Build the project using $ `dotnet build`
+* Execute code with $ `dotnet run`
+* `Click black text to navigate links!`, recolor from the default blue. 
 
 ## Testing Instructions
 
 * To run tests, first install/setup as detailed above
-* navigate to the GantzOrders.Tests directory and open a command line interface
-* run tests by executing $ `dotnet test`
-* if additional tests are required, first modify the existing test file within the correct folder before running `dotnet test` again
+* Navigate to the GantzOrders.Tests directory and open a command line interface
+* Run tests by executing $ `dotnet test`
+* If additional tests are required, first modify the existing test file within the correct folder before running `dotnet test` again
 
 ## Known Bugs
 
